@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les pays du monde</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+        <!-- Ajouter le lien vers Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <!-- Ajouter le lien vers Leaflet JS -->
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <style>
+            #map {
+                height: 400px;
+                width: 100%;
+                margin-top: 20px;
+            }
+        </style>
+  </head>
+  <body>
+
+    <h1>Liste des pays</h1>
+
+    <!-- Barre de recherche -->
+    <input type="text" id="search" placeholder="Rechercher un pays..." />
+    
+    <!-- Conteneur pour les pays -->
+    <div id="container"></div>
+    
+    <!-- Carte modale -->
+<div id="mapModal" class="modal">
+    <div class="modal-content">
+        <!-- Bouton de fermeture (croix) -->
+        <span class="close" style="cursor: pointer;">&times;</span>
+
+        <!-- Carte modale -->
+        <div id="modalMap" style="height: 300px;"></div>
+        <p id="modalCountryName"></p>
+        <p id="modalCapital"></p>
+
+        <!-- Bouton supplémentaire pour fermer la carte -->
+        <button id="closeMapBtn" class="close-btn">Fermer la carte</button>
+        
+    </div>
+</div>
+  </body>
+</html>

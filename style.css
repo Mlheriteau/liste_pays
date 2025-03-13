@@ -1,0 +1,199 @@
+/* Design général - pour une application mobile/web moderne */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8; /* couleur de fond */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container */
+#container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Utilisation de grid pour un design moderne */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centrer le conteneur */
+}
+
+/* Titre */
+h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-top: 40px;
+    font-weight: 600;
+}
+
+/* Barre de recherche */
+#search {
+    padding: 12px 20px;
+    margin: 20px auto;
+    width: 70%;
+    max-width: 400px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    display: block;
+}
+
+#search:focus {
+    border-color: #3498db;
+    outline: none;
+    background-color: #f9f9f9;
+}
+
+/* Chaque carte de pays */
+.Pays {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Effet de survol de la carte */
+.Pays:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image du drapeau */
+.flag {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Titre du pays */
+.Pays h2 {
+    font-size: 20px;
+    color: #2c3e50;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+/* Description (capitale, population, etc...) */
+.Pays p {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin: 5px 0;
+}
+
+/* Ajout de padding et d'espacement */
+.Pays .info {
+    flex-grow: 1;
+}
+
+/* Utilisation de flexbox pour aligner l'information proprement */
+.Pays .info p {
+    margin: 5px 0;
+}
+
+/* Animation pour afficher les éléments progressivement */
+.Pays {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #search {
+        width: 80%;
+    }
+    #container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+    .Pays {
+        width: 90%;
+        padding: 15px;
+    }
+    #search {
+        width: 90%;
+    }
+}
+/* Style général pour la carte modale */
+.modal {
+    display: none; /* Cacher la carte modale par défaut */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+}
+
+/* Contenu de la modale */
+.modal-content {
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+/* Bouton de fermeture */
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* Changement de couleur au survol */
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Style pour le bouton de fermeture */
+.close-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/* Changer la couleur du bouton au survol */
+.close-btn:hover {
+    background-color: #d32f2f;
+}
